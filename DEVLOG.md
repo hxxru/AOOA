@@ -13,6 +13,7 @@ Released as the first stable testing version of the All of Our Ancestors React/V
 - The mobile footer shows a small first-use swipe hint that disappears after navigation.
 - The info/help content opens in a centered modal with a blurred backdrop.
 - The footer displays the app version from `package.json`.
+- Stage records can include curated external links. The current UI renders Wikipedia links as icon-only buttons using Wikipedia's favicon.
 
 ### Implementation notes for future agents
 
@@ -22,6 +23,7 @@ Released as the first stable testing version of the All of Our Ancestors React/V
 - Mobile swipe handling uses native `touchstart`, `touchend`, and `touchcancel` listeners on `.main-shell`, with pointer events retained as a non-touch fallback for testing.
 - The mobile horizontal stage rail is separate from page swipes. Swipe page content to navigate stages; scroll the rail to browse visible stages.
 - Keep `content/stages.json` as structured data. Avoid hard-coding stage facts into JSX.
+- Prefer curated `links` entries over generated URLs; many stage names are lineage grades rather than exact article titles.
 - `.DS_Store` is ignored and should not be reintroduced to the repository.
 
 ### Verification checklist
@@ -30,6 +32,7 @@ Released as the first stable testing version of the All of Our Ancestors React/V
 - Check desktop navigation: sidebar, footer buttons, arrow keys, Home, End.
 - Check mobile navigation on a real phone after deploy, especially horizontal swipes inside the page content.
 - Confirm the footer version matches `package.json`.
+- Spot-check that stage external links open the intended pages in a new tab.
 - Confirm GitHub Pages deploys from the `main` branch workflow.
 
 ## Milestones

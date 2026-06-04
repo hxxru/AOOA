@@ -1,9 +1,10 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import content from "../content/stages.json";
 import packageJson from "../package.json";
 
 const ENTRIES = content.stages;
 const APP_VERSION = packageJson.version;
+const WIKIPEDIA_ICON_URL = "https://en.wikipedia.org/static/favicon/wikipedia.ico";
 const ERA_CONFIG = {
   archean: {
     label: "Archean",
@@ -90,6 +91,22 @@ function DataField({ label, children }) {
   );
 }
 
+function LinkButton({ entry, link }) {
+  return (
+    <a
+      className="external-link-button"
+      href={link.url}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={`Open ${entry.name} on ${link.label}`}
+      title={link.label}
+    >
+      {link.label === "Wikipedia" && <img src={WIKIPEDIA_ICON_URL} alt="" aria-hidden="true" />}
+      <span className="sr-only">{link.label}</span>
+    </a>
+  );
+}
+
 function TimelineStrip({ current }) {
   const entry = ENTRIES[current];
   const anchorIndex = getEraStartIndex(current);
@@ -173,6 +190,7 @@ function TimelineStrip({ current }) {
 
 function EntryList({ current, onSelect }) {
   const scrollRef = useRef(null);
+  const activeRef = useRef(null);
   const currentEntry = ENTRIES[current];
   const anchorIndex = getEraStartIndex(current);
   const earlierCount = anchorIndex;
@@ -183,6 +201,27 @@ function EntryList({ current, onSelect }) {
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, [anchorIndex]);
+
+  useLayoutEffect(() => {
+    const container = scrollRef.current;
+    const active = activeRef.current;
+    if (!container || !active) return;
+
+    const containerRect = container.getBoundingClientRect();
+    const activeRect = active.getBoundingClientRect();
+    const isHorizontalRail = window.matchMedia("(max-width: 620px)").matches;
+
+    if (isHorizontalRail) {
+      const targetLeft = active.offsetLeft - container.clientWidth / 2 + active.clientWidth / 2;
+      const isVisible = activeRect.left >= containerRect.left && activeRect.right <= containerRect.right;
+      if (!isVisible) container.scrollLeft = Math.max(0, targetLeft);
+      return;
+    }
+
+    const targetTop = active.offsetTop - container.clientHeight / 2 + active.clientHeight / 2;
+    const isVisible = activeRect.top >= containerRect.top && activeRect.bottom <= containerRect.bottom;
+    if (!isVisible) container.scrollTop = Math.max(0, targetTop);
+  }, [current]);
 
   const grouped = useMemo(() => {
     const items = [];
@@ -233,6 +272,7 @@ function EntryList({ current, onSelect }) {
           return (
             <button
               key={entry.id}
+              ref={active ? activeRef : null}
               type="button"
               className={`entry-list-item ${active ? "is-active" : ""}`}
               style={{
@@ -296,6 +336,16 @@ function PageContent({ entry }) {
         <DataField label="proximity confidence">
           <ConfidencePill text={entry.confidence} />
         </DataField>
+
+        {entry.links?.length > 0 && (
+          <DataField label="learn more">
+            <div className="external-link-row">
+              {entry.links.map((link) => (
+                <LinkButton key={link.url} entry={entry} link={link} />
+              ))}
+            </div>
+          </DataField>
+        )}
       </section>
 
       <section className="explainer-placeholder" aria-label="Detailed explainer placeholder">

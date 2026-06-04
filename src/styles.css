@@ -428,6 +428,49 @@ h1 {
   flex-shrink: 0;
 }
 
+.external-link-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.external-link-button {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  transition: all 0.15s ease;
+}
+
+.external-link-button:hover,
+.external-link-button:focus-visible {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+}
+
+.external-link-button img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .explainer-placeholder {
   max-width: 720px;
   margin-top: 28px;

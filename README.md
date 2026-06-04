@@ -12,6 +12,7 @@ This repo is packaged for GitHub Pages. It includes the React app, the 45-stage 
 - On mobile, swipe left for the next stage and swipe right for the previous stage. The mobile footer keeps only the stage counter.
 - The info panel opens as a centered modal with a blurred backdrop.
 - The footer shows the version from `package.json`, so live deployments can be identified while testing.
+- Each stage can expose curated external learning links; v1.0.0 starts with a Wikipedia icon button.
 
 ## What is included
 
