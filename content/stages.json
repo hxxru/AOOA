@@ -213,7 +213,11 @@
           "url": "https://en.wikipedia.org/wiki/Chordate"
         }
       ],
-      "intro": "Early chordates were small swimming animals with a notochord, dorsal nerve cord, and segmented muscles. They did not yet look like familiar vertebrates, but they established the basic body architecture our lineage still uses."
+      "intro": "Early chordates were small swimming animals with a notochord, dorsal nerve cord, and segmented muscles. They did not yet look like familiar vertebrates, but they established the basic body architecture our lineage still uses.",
+      "illustration": {
+        "src": "/illustrations/stage-10-early-chordate.jpg",
+        "alt": "Reconstruction of a small early chordate with a long finned body, whisker-like head filaments, and a dark background."
+      }
     },
     {
       "id": 11,
@@ -234,7 +238,11 @@
           "url": "https://en.wikipedia.org/wiki/Vertebrate"
         }
       ],
-      "intro": "Early vertebrate or craniate relatives added a distinct head, sensory organs, and stronger swimming machinery. These small Cambrian animals began the long vertebrate trend toward active movement and more complex nervous systems."
+      "intro": "Early vertebrate or craniate relatives added a distinct head, sensory organs, and stronger swimming machinery. These small Cambrian animals began the long vertebrate trend toward active movement and more complex nervous systems.",
+      "illustration": {
+        "src": "/illustrations/stage-11-early-vertebrate.jpg",
+        "alt": "Reconstruction of a small early vertebrate or craniate with a soft curved body, paired eyes, and a dark background."
+      }
     },
     {
       "id": 12,
@@ -255,7 +263,11 @@
           "url": "https://en.wikipedia.org/wiki/Gnathostomata"
         }
       ],
-      "intro": "Jawed vertebrates transformed feeding and locomotion. Jaws, teeth, and paired appendages made vertebrates more versatile predators and set up the later split between cartilaginous and bony fish lineages."
+      "intro": "Jawed vertebrates transformed feeding and locomotion. Jaws, teeth, and paired appendages made vertebrates more versatile predators and set up the later split between cartilaginous and bony fish lineages.",
+      "illustration": {
+        "src": "/illustrations/stage-12-jawed-vertebrate.jpg",
+        "alt": "Reconstruction of an armored jawed vertebrate with fins and a broad head on a dark background."
+      }
     },
     {
       "id": 13,
@@ -276,7 +288,11 @@
           "url": "https://en.wikipedia.org/wiki/Osteichthyes"
         }
       ],
-      "intro": "Bony fish ancestors carried a mineralized skeleton and refinements to the jaws and teeth. This is the branch that eventually produced ray-finned fishes on one side and the lobe-finned lineage leading toward tetrapods on the other."
+      "intro": "Bony fish ancestors carried a mineralized skeleton and refinements to the jaws and teeth. This is the branch that eventually produced ray-finned fishes on one side and the lobe-finned lineage leading toward tetrapods on the other.",
+      "illustration": {
+        "src": "/illustrations/stage-13-bony-fish.jpg",
+        "alt": "Reconstruction of a predatory bony fish with scales, fins, and visible teeth on a dark background."
+      }
     },
     {
       "id": 14,

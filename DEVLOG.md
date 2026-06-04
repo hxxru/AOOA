@@ -15,6 +15,7 @@ Released as the first stable testing version of the All of Our Ancestors React/V
 - The info/help content opens in a centered modal with a blurred backdrop.
 - The footer displays the app version from `package.json`.
 - Stage records can include curated external links. The current UI renders Wikipedia links as icon-only buttons using Wikipedia's favicon.
+- Stage records can include an `illustration` object with `src` and `alt`. Static trial images live under `public/illustrations/`.
 
 ### Implementation notes for future agents
 
@@ -26,6 +27,7 @@ Released as the first stable testing version of the All of Our Ancestors React/V
 - Keep `content/stages.json` as structured data. Avoid hard-coding stage facts into JSX.
 - Keep stage intros to 2-3 concise sentences. They should orient, not replace citations or detailed explainers.
 - Prefer curated `links` entries over generated URLs; many stage names are lineage grades rather than exact article titles.
+- Keep illustration paths root-relative, for example `/illustrations/stage-10-early-chordate.jpg`, so Vite can serve them from `public/`.
 - `.DS_Store` is ignored and should not be reintroduced to the repository.
 
 ### Verification checklist

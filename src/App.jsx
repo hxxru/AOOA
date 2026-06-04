@@ -315,9 +315,15 @@ function PageContent({ entry }) {
 
       <p className="stage-intro">{entry.intro}</p>
 
-      <div className="illustration-placeholder" role="img" aria-label={`Illustration placeholder for ${entry.name}`}>
-        <span>illustration</span>
-      </div>
+      {entry.illustration ? (
+        <figure className="stage-illustration">
+          <img src={entry.illustration.src} alt={entry.illustration.alt} />
+        </figure>
+      ) : (
+        <div className="illustration-placeholder" role="img" aria-label={`Illustration placeholder for ${entry.name}`}>
+          <span>illustration</span>
+        </div>
+      )}
 
       <section className="stage-fields" aria-label="Stage details">
         <DataField label="exemplar fossils / analogues">
