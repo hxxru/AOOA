@@ -2,8 +2,6 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import content from "../content/stages.json";
 
 const ENTRIES = content.stages;
-const MAX_MYA = 4200;
-
 const ERA_CONFIG = {
   archean: {
     label: "Archean",
@@ -44,8 +42,6 @@ const ERA_CONFIG = {
 
 const ERA_ORDER = ["archean", "proterozoic", "paleozoic", "mesozoic", "cenozoic"];
 
-const myaToPercent = (mya) => (1 - mya / MAX_MYA) * 100;
-
 function getConfidenceColor(confidence) {
   const value = confidence.toLowerCase();
   if (value.startsWith("high")) return "#4ade80";
@@ -84,21 +80,31 @@ function DataField({ label, children }) {
 
 function TimelineStrip({ current }) {
   const entry = ENTRIES[current];
-  const era = ERA_CONFIG[entry.era];
   const PAD = 12;
+  const visibleWindowMya = Math.max(entry.mya, 0.1);
+  const visibleEntries = ENTRIES.slice(current);
 
   // Patched from the original JSX. The first version used CSS calc() multiplication
   // with mixed units, which is invalid/fragile. These helpers move the multiplication
   // into JS and leave CSS with simple percentage + px or percentage - px expressions.
   const timelinePos = (pct) => `calc(${pct}% + ${PAD - (pct / 100) * PAD * 2}px)`;
   const timelineHeight = (pct) => `calc(${pct}% - ${(pct / 100) * PAD * 2}px)`;
+  const visiblePercent = (mya) => (1 - mya / visibleWindowMya) * 100;
 
   return (
-    <div className="timeline-strip" aria-hidden="true">
+    <div className="timeline-strip" aria-label={`Timeline from ${entry.time} to now`}>
+      {current > 0 && (
+        <div className="timeline-collapsed-history" title={`${current} earlier stages collapsed`} />
+      )}
+
       {ERA_ORDER.map((key) => {
         const e = ERA_CONFIG[key];
-        const top = myaToPercent(e.startMya);
-        const bottom = myaToPercent(e.endMya);
+        const olderEdge = Math.min(e.startMya, visibleWindowMya);
+        const newerEdge = Math.max(e.endMya, 0);
+        if (olderEdge <= newerEdge) return null;
+
+        const top = visiblePercent(olderEdge);
+        const bottom = visiblePercent(newerEdge);
         return (
           <div
             key={key}
@@ -114,15 +120,16 @@ function TimelineStrip({ current }) {
 
       <div className="timeline-center-line" style={{ top: PAD, bottom: PAD }} />
 
-      {ENTRIES.map((candidate, index) => {
-        const pct = myaToPercent(candidate.mya);
-        const isCurrent = index === current;
+      {visibleEntries.map((candidate, offset) => {
+        const pct = visiblePercent(candidate.mya);
+        const isCurrent = offset === 0;
         const color = ERA_CONFIG[candidate.era].color;
         return (
           <div
             key={candidate.id}
             className="timeline-dot"
             style={{
+              "--timeline-pos": timelinePos(pct),
               top: timelinePos(pct),
               width: isCurrent ? 8 : 3,
               height: isCurrent ? 8 : 3,
@@ -136,42 +143,61 @@ function TimelineStrip({ current }) {
 
       <div
         className="timeline-current-tick"
-        style={{ top: timelinePos(myaToPercent(entry.mya)), background: era.color }}
+        style={{
+          "--timeline-pos": timelinePos(visiblePercent(entry.mya)),
+          top: timelinePos(visiblePercent(entry.mya)),
+          background: ERA_CONFIG[entry.era].color,
+        }}
       />
 
       <div className="timeline-label timeline-label-now">now</div>
-      <div className="timeline-label timeline-label-deep">4.2Ga</div>
+      <div className="timeline-label timeline-label-current">{entry.time}</div>
     </div>
   );
 }
 
 function EntryList({ current, onSelect }) {
-  const activeRef = useRef(null);
   const scrollRef = useRef(null);
+  const currentEntry = ENTRIES[current];
+  const earlierCount = current;
+  const remainingCount = ENTRIES.length - current;
+  const remainingLabel = remainingCount === 1 ? "final stage" : `${remainingCount} stages left`;
 
   useEffect(() => {
-    if (!activeRef.current || !scrollRef.current) return;
-    const container = scrollRef.current;
-    const active = activeRef.current;
-    const top = active.offsetTop - container.offsetTop - container.clientHeight / 2 + active.clientHeight / 2;
-    container.scrollTo({ top, behavior: "smooth" });
+    scrollRef.current?.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, [current]);
 
   const grouped = useMemo(() => {
     const items = [];
     let lastEra = null;
-    ENTRIES.forEach((entry, index) => {
+    ENTRIES.slice(current).forEach((entry, offset) => {
       if (entry.era !== lastEra) {
         items.push({ type: "era", era: entry.era });
         lastEra = entry.era;
       }
-      items.push({ type: "entry", entry, index });
+      items.push({ type: "entry", entry, index: current + offset });
     });
     return items;
-  }, []);
+  }, [current]);
 
   return (
     <nav className="entry-list" aria-label="Ancestor stages">
+      <div className="entry-list-status">
+        <button
+          type="button"
+          className="earlier-collapse"
+          onClick={() => onSelect(current - 1)}
+          disabled={earlierCount === 0}
+          aria-label={earlierCount > 0 ? `Go to previous stage, ${earlierCount} earlier stages` : "At earliest stage"}
+        >
+          {earlierCount > 0 ? `${earlierCount} earlier` : "origin"}
+        </button>
+        <div className="entry-list-current-time">
+          <span>{currentEntry.time}</span>
+          <small>{remainingLabel}</small>
+        </div>
+      </div>
+
       <div ref={scrollRef} className="entry-list-scroll">
         {grouped.map((item) => {
           if (item.type === "era") {
@@ -190,10 +216,12 @@ function EntryList({ current, onSelect }) {
           return (
             <button
               key={entry.id}
-              ref={active ? activeRef : null}
               type="button"
               className={`entry-list-item ${active ? "is-active" : ""}`}
-              style={{ borderLeftColor: active ? cfg.color : "transparent" }}
+              style={{
+                "--entry-color": cfg.color,
+                borderLeftColor: active ? cfg.color : "transparent",
+              }}
               onClick={() => onSelect(index)}
             >
               <span
@@ -264,7 +292,7 @@ function PageContent({ entry }) {
   );
 }
 
-function InfoPanel({ onClose }) {
+function InfoModal({ onClose }) {
   const blocks = [
     {
       head: "what this is",
@@ -293,18 +321,26 @@ function InfoPanel({ onClose }) {
   ];
 
   return (
-    <aside className="info-panel" aria-label="How to read this visualization">
-      <div className="info-panel-header">
-        <span>how to read this</span>
-        <button type="button" onClick={onClose} aria-label="Close info panel">×</button>
-      </div>
-      {blocks.map((block) => (
-        <div className="info-block" key={block.head}>
-          <div className="info-block-head">{block.head}</div>
-          <div className="info-block-body">{block.body}</div>
+    <div className="info-modal-backdrop" role="presentation" onClick={onClose}>
+      <aside
+        className="info-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-label="How to read this visualization"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <div className="info-panel-header">
+          <span>how to read this</span>
+          <button type="button" onClick={onClose} aria-label="Close info panel">×</button>
         </div>
-      ))}
-    </aside>
+        {blocks.map((block) => (
+          <div className="info-block" key={block.head}>
+            <div className="info-block-head">{block.head}</div>
+            <div className="info-block-body">{block.body}</div>
+          </div>
+        ))}
+      </aside>
+    </div>
   );
 }
 
@@ -323,6 +359,14 @@ export default function App() {
 
   useEffect(() => {
     const handler = (event) => {
+      if (infoOpen) {
+        if (event.key === "Escape") {
+          event.preventDefault();
+          setInfoOpen(false);
+        }
+        return;
+      }
+
       if (event.key === "ArrowRight" || event.key === "ArrowDown") {
         event.preventDefault();
         go(1);
@@ -343,7 +387,7 @@ export default function App() {
 
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [go]);
+  }, [go, infoOpen]);
 
   const entry = ENTRIES[idx];
   const era = ERA_CONFIG[entry.era];
@@ -365,7 +409,7 @@ export default function App() {
             </button>
           )}
 
-          {infoOpen && <InfoPanel onClose={() => setInfoOpen(false)} />}
+          {infoOpen && <InfoModal onClose={() => setInfoOpen(false)} />}
         </div>
       </div>
 
