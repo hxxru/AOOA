@@ -653,6 +653,10 @@ h1 {
     flex-direction: column;
   }
 
+  .main-shell {
+    touch-action: pan-y;
+  }
+
   .sidebar-shell {
     width: 100%;
     min-width: 0;
@@ -766,15 +770,15 @@ h1 {
   }
 
   .bottom-nav {
-    height: 50px;
-    min-height: 50px;
-    justify-content: space-between;
+    height: 34px;
+    min-height: 34px;
+    justify-content: center;
     padding: 0 12px;
-    gap: 8px;
+    gap: 0;
   }
 
   .bottom-nav button {
-    padding: 6px 10px;
+    display: none;
   }
 
   .info-modal {

@@ -42,6 +42,11 @@ const ERA_CONFIG = {
 
 const ERA_ORDER = ["archean", "proterozoic", "paleozoic", "mesozoic", "cenozoic"];
 
+function getEraStartIndex(index) {
+  const era = ENTRIES[index].era;
+  return ENTRIES.findIndex((entry) => entry.era === era);
+}
+
 function getConfidenceColor(confidence) {
   const value = confidence.toLowerCase();
   if (value.startsWith("high")) return "#4ade80";
@@ -80,9 +85,11 @@ function DataField({ label, children }) {
 
 function TimelineStrip({ current }) {
   const entry = ENTRIES[current];
+  const anchorIndex = getEraStartIndex(current);
+  const anchorEntry = ENTRIES[anchorIndex];
   const PAD = 12;
-  const visibleWindowMya = Math.max(entry.mya, 0.1);
-  const visibleEntries = ENTRIES.slice(current);
+  const visibleWindowMya = Math.max(anchorEntry.mya, 0.1);
+  const visibleEntries = ENTRIES.slice(anchorIndex);
 
   // Patched from the original JSX. The first version used CSS calc() multiplication
   // with mixed units, which is invalid/fragile. These helpers move the multiplication
@@ -92,9 +99,9 @@ function TimelineStrip({ current }) {
   const visiblePercent = (mya) => (1 - mya / visibleWindowMya) * 100;
 
   return (
-    <div className="timeline-strip" aria-label={`Timeline from ${entry.time} to now`}>
-      {current > 0 && (
-        <div className="timeline-collapsed-history" title={`${current} earlier stages collapsed`} />
+    <div className="timeline-strip" aria-label={`Timeline from ${anchorEntry.time} to now`}>
+      {anchorIndex > 0 && (
+        <div className="timeline-collapsed-history" title={`${anchorIndex} earlier stages collapsed`} />
       )}
 
       {ERA_ORDER.map((key) => {
@@ -122,7 +129,8 @@ function TimelineStrip({ current }) {
 
       {visibleEntries.map((candidate, offset) => {
         const pct = visiblePercent(candidate.mya);
-        const isCurrent = offset === 0;
+        const index = anchorIndex + offset;
+        const isCurrent = index === current;
         const color = ERA_CONFIG[candidate.era].color;
         return (
           <div
@@ -151,7 +159,7 @@ function TimelineStrip({ current }) {
       />
 
       <div className="timeline-label timeline-label-now">now</div>
-      <div className="timeline-label timeline-label-current">{entry.time}</div>
+      <div className="timeline-label timeline-label-current">{anchorEntry.time}</div>
     </div>
   );
 }
@@ -159,26 +167,28 @@ function TimelineStrip({ current }) {
 function EntryList({ current, onSelect }) {
   const scrollRef = useRef(null);
   const currentEntry = ENTRIES[current];
-  const earlierCount = current;
-  const remainingCount = ENTRIES.length - current;
-  const remainingLabel = remainingCount === 1 ? "final stage" : `${remainingCount} stages left`;
+  const anchorIndex = getEraStartIndex(current);
+  const earlierCount = anchorIndex;
+  const visibleCount = ENTRIES.length - anchorIndex;
+  const era = ERA_CONFIG[currentEntry.era];
+  const visibleLabel = `${era.label} onward`;
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  }, [current]);
+  }, [anchorIndex]);
 
   const grouped = useMemo(() => {
     const items = [];
     let lastEra = null;
-    ENTRIES.slice(current).forEach((entry, offset) => {
+    ENTRIES.slice(anchorIndex).forEach((entry, offset) => {
       if (entry.era !== lastEra) {
         items.push({ type: "era", era: entry.era });
         lastEra = entry.era;
       }
-      items.push({ type: "entry", entry, index: current + offset });
+      items.push({ type: "entry", entry, index: anchorIndex + offset });
     });
     return items;
-  }, [current]);
+  }, [anchorIndex]);
 
   return (
     <nav className="entry-list" aria-label="Ancestor stages">
@@ -186,7 +196,7 @@ function EntryList({ current, onSelect }) {
         <button
           type="button"
           className="earlier-collapse"
-          onClick={() => onSelect(current - 1)}
+          onClick={() => onSelect(anchorIndex - 1)}
           disabled={earlierCount === 0}
           aria-label={earlierCount > 0 ? `Go to previous stage, ${earlierCount} earlier stages` : "At earliest stage"}
         >
@@ -194,7 +204,7 @@ function EntryList({ current, onSelect }) {
         </button>
         <div className="entry-list-current-time">
           <span>{currentEntry.time}</span>
-          <small>{remainingLabel}</small>
+          <small>{visibleLabel} - {visibleCount} visible</small>
         </div>
       </div>
 
@@ -347,6 +357,7 @@ function InfoModal({ onClose }) {
 export default function App() {
   const [idx, setIdx] = useState(0);
   const [infoOpen, setInfoOpen] = useState(true);
+  const gestureStartRef = useRef(null);
 
   const go = useCallback((dir) => {
     setIdx((previous) => {
@@ -389,6 +400,22 @@ export default function App() {
     return () => window.removeEventListener("keydown", handler);
   }, [go, infoOpen]);
 
+  const handlePointerDown = useCallback((event) => {
+    if (infoOpen || !window.matchMedia("(max-width: 620px)").matches) return;
+    gestureStartRef.current = { x: event.clientX, y: event.clientY };
+  }, [infoOpen]);
+
+  const handlePointerUp = useCallback((event) => {
+    if (infoOpen || !gestureStartRef.current) return;
+
+    const deltaX = event.clientX - gestureStartRef.current.x;
+    const deltaY = event.clientY - gestureStartRef.current.y;
+    gestureStartRef.current = null;
+
+    if (Math.abs(deltaX) < 56 || Math.abs(deltaX) < Math.abs(deltaY) * 1.4) return;
+    go(deltaX < 0 ? 1 : -1);
+  }, [go, infoOpen]);
+
   const entry = ENTRIES[idx];
   const era = ERA_CONFIG[entry.era];
 
@@ -400,7 +427,7 @@ export default function App() {
           <EntryList current={idx} onSelect={setIdx} />
         </div>
 
-        <div className="main-shell">
+        <div className="main-shell" onPointerDown={handlePointerDown} onPointerUp={handlePointerUp}>
           <PageContent key={entry.id} entry={entry} />
 
           {!infoOpen && (

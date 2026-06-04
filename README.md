@@ -2,7 +2,15 @@
 
 A minimal React/Vite site for an educational deep-time ancestry atlas, from LUCA to recent modern humans.
 
-This repo was packaged for GitHub Pages. It includes the patched JSX app, the 45-stage content dataset, and a GitHub Actions workflow that builds and deploys the `dist/` output to Pages.
+This repo is packaged for GitHub Pages. It includes the React app, the 45-stage content dataset, and a GitHub Actions workflow that builds and deploys the `dist/` output to Pages.
+
+## Interaction model
+
+- The left navigation shows the current era and every later era, while older eras are collapsed above the list.
+- The timeline rescales only when the selected stage crosses into a new era, so LUCA and other deep-time stages do not distort every later view.
+- On desktop, use the sidebar, arrow keys, Home/End, or the footer prev/next buttons.
+- On mobile, swipe left for the next stage and swipe right for the previous stage. The mobile footer keeps only the stage counter.
+- The info panel opens as a centered modal with a blurred backdrop.
 
 ## What is included
 
@@ -47,7 +55,7 @@ The Vite config automatically sets the correct base path for GitHub Pages using 
 
 ## Patch note
 
-The original `TimelineStrip` JSX used CSS `calc()` expressions that multiplied unit-bearing values, for example:
+The timeline positioning intentionally keeps multiplication in JavaScript rather than CSS. An earlier `TimelineStrip` used CSS `calc()` expressions that multiplied unit-bearing values, for example:
 
 ```jsx
 calc(${top}% * (100% - ${PAD * 2}px) / 100%)
