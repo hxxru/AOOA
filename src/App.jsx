@@ -313,6 +313,8 @@ function PageContent({ entry }) {
       <h1>{entry.name}</h1>
       <div className="stage-group">{entry.group}</div>
 
+      <p className="stage-intro">{entry.intro}</p>
+
       <div className="illustration-placeholder" role="img" aria-label={`Illustration placeholder for ${entry.name}`}>
         <span>illustration</span>
       </div>

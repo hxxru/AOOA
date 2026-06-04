@@ -7,6 +7,7 @@ Released as the first stable testing version of the All of Our Ancestors React/V
 ### Current behavior
 
 - The app renders 45 lineage stages from `content/stages.json`.
+- Each stage includes a short `intro` field rendered between the title/subtitle and the illustration area.
 - The sidebar/timeline window is era-anchored: it starts at the oldest entry in the current era and shows every later era, while older eras are collapsed.
 - Desktop navigation supports sidebar clicks, footer prev/next buttons, arrow keys, Home, and End.
 - Mobile navigation hides footer prev/next buttons and uses horizontal gestures: swipe left for next, swipe right for previous.
@@ -23,6 +24,7 @@ Released as the first stable testing version of the All of Our Ancestors React/V
 - Mobile swipe handling uses native `touchstart`, `touchend`, and `touchcancel` listeners on `.main-shell`, with pointer events retained as a non-touch fallback for testing.
 - The mobile horizontal stage rail is separate from page swipes. Swipe page content to navigate stages; scroll the rail to browse visible stages.
 - Keep `content/stages.json` as structured data. Avoid hard-coding stage facts into JSX.
+- Keep stage intros to 2-3 concise sentences. They should orient, not replace citations or detailed explainers.
 - Prefer curated `links` entries over generated URLs; many stage names are lineage grades rather than exact article titles.
 - `.DS_Store` is ignored and should not be reintroduced to the repository.
 

@@ -5,50 +5,950 @@
     "aboutCaveat": "These are representative lineage stages. Exemplar fossils are usually close relatives that illustrate what our actual ancestors may have resembled, not proven direct ancestors. The human lineage is bushy, not a clean ladder."
   },
   "stages": [
-    { "id": 1, "mya": 4200, "time": "~4.2 Ga", "name": "LUCA", "group": "Last universal common ancestor", "fossils": "No fossil; inferred from shared genes", "innovation": "DNA/RNA/protein system, ribosomes, ATP metabolism, cellular life", "confidence": "High lineage, low visual detail", "era": "archean", "length": "~1–2 μm", "mass": "~1 pg", "genTime": "~1–10 hr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Last_universal_common_ancestor" }] },
-    { "id": 2, "mya": 2250, "time": "~2.7–1.8 Ga", "name": "Proto-eukaryote", "group": "Archaeal host + bacterial symbiont", "fossils": "No fossil; Asgard-archaeal-style model", "innovation": "Mitochondrial endosymbiosis begins; larger, more complex cells", "confidence": "Medium", "era": "archean", "length": "~5–15 μm", "mass": "~10–100 pg", "genTime": "~12–24 hr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Eukaryogenesis" }] },
-    { "id": 3, "mya": 1650, "time": "~1.8–1.5 Ga", "name": "LECA", "group": "Last eukaryotic common ancestor", "fossils": "No direct fossil; protosterol-biota as broad early-eukaryote signal", "innovation": "Nucleus, mitochondria, cytoskeleton, membrane trafficking, likely sex", "confidence": "High clade, medium timing", "era": "proterozoic", "length": "~10–30 μm", "mass": "~1 ng", "genTime": "~1 day", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Last_eukaryotic_common_ancestor" }] },
-    { "id": 4, "mya": 1100, "time": "~1.2–1.0 Ga", "name": "Opisthokont ancestor", "group": "Opisthokonta", "fossils": "No secure fossil; living analogues: fungi/animals/choanoflagellates", "innovation": "Rear flagellum, phagocytosis, cell-signaling toolkit", "confidence": "Medium", "era": "proterozoic", "length": "~10–20 μm", "mass": "~1 ng", "genTime": "~1 day", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Opisthokont" }] },
-    { "id": 5, "mya": 800, "time": "~900–700 Ma", "name": "Choanoflagellate-like holozoan", "group": "Holozoa", "fossils": "Living analogues: Salpingoeca, choanoflagellates", "innovation": "Collar cells, bacterial feeding, colony-forming potential", "confidence": "Medium-high", "era": "proterozoic", "length": "~5–10 μm cell; colonies ~100 μm", "mass": "~1 ng", "genTime": "~1 day", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Choanoflagellate" }] },
-    { "id": 6, "mya": 667, "time": "~700–635 Ma", "name": "Stem animal, sponge-grade", "group": "Metazoa stem", "fossils": "Possible sponge biomarkers/body fossils, debated", "innovation": "Stable multicellularity, cell adhesion, developmental gene regulation", "confidence": "Medium", "era": "proterozoic", "length": "~1–10 mm", "mass": "~0.01–0.1 g", "genTime": "~months", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Animal" }] },
-    { "id": 7, "mya": 605, "time": "~635–575 Ma", "name": "Early eumetazoan-grade animal", "group": "Eumetazoa stem", "fossils": "Ediacaran soft-bodied animal candidates", "innovation": "Tissues, nerves/muscles beginning, organized body axes", "confidence": "Medium-low", "era": "proterozoic", "length": "~1–5 cm", "mass": "~0.1–1 g", "genTime": "~months", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Eumetazoa" }] },
-    { "id": 8, "mya": 557, "time": "~560–555 Ma", "name": "Urbilaterian-like worm", "group": "Bilateria", "fossils": "Ikaria wariootia", "innovation": "Bilateral symmetry, front/back body plan, directed crawling, likely through-gut", "confidence": "Medium-high", "era": "proterozoic", "length": "~2–7 mm", "mass": "~0.01–0.1 g", "genTime": "~weeks–months", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Urbilaterian" }] },
-    { "id": 9, "mya": 530, "time": "~540–520 Ma", "name": "Early deuterostome", "group": "Deuterostomia stem", "fossils": "No perfect exemplar; Saccorhytus placement revised", "innovation": "Deuterostome developmental pattern, pharyngeal-region innovations", "confidence": "Medium-low", "era": "paleozoic", "length": "~1–5 mm", "mass": "~0.01 g", "genTime": "~months", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Deuterostome" }] },
-    { "id": 10, "mya": 513, "time": "~518–508 Ma", "name": "Early chordate", "group": "Chordata", "fossils": "Pikaia, Haikouella-like forms", "innovation": "Notochord, dorsal nerve cord, segmented muscles", "confidence": "Medium-high", "era": "paleozoic", "length": "~3–5 cm", "mass": "~1–5 g", "genTime": "~1 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Chordate" }] },
-    { "id": 11, "mya": 518, "time": "~518 Ma", "name": "Early vertebrate/craniate", "group": "Vertebrata / Craniata", "fossils": "Haikouichthys, Myllokunmingia", "innovation": "Head, paired eyes, early backbone/skull tissues, active swimming", "confidence": "High", "era": "paleozoic", "length": "~2.5 cm", "mass": "~1–2 g", "genTime": "~1 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Vertebrate" }] },
-    { "id": 12, "mya": 434, "time": "~439–430 Ma", "name": "Jawed vertebrate", "group": "Gnathostomata", "fossils": "Qianodus, Xiushanosteus, Entelognathus", "innovation": "Jaws, teeth, paired appendage control, predatory feeding", "confidence": "High clade, medium exemplar", "era": "paleozoic", "length": "~20 cm", "mass": "~100–200 g", "genTime": "~2–5 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Gnathostomata" }] },
-    { "id": 13, "mya": 422, "time": "~425–420 Ma", "name": "Bony fish ancestor", "group": "Osteichthyes", "fossils": "Guiyu oneiros", "innovation": "Bony internal skeleton, tooth/jaw refinements, lung/swim-bladder lineage", "confidence": "High", "era": "paleozoic", "length": "~30 cm", "mass": "~200–500 g", "genTime": "~3–5 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Osteichthyes" }] },
-    { "id": 14, "mya": 405, "time": "~420–390 Ma", "name": "Lobe-finned fish", "group": "Sarcopterygii", "fossils": "Psarolepis, Eusthenopteron", "innovation": "Limb-like fin bones, stronger axial skeleton, air-breathing tendencies", "confidence": "High clade, medium exemplar", "era": "paleozoic", "length": "~30–60 cm", "mass": "~0.5–2 kg", "genTime": "~3–5 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Sarcopterygii" }] },
-    { "id": 15, "mya": 380, "time": "~385–375 Ma", "name": "Fishapod", "group": "Elpistostegalia", "fossils": "Panderichthys, Tiktaalik", "innovation": "Neck, flat skull, wrist-like fin bones, shallow-water ambush ecology", "confidence": "High as close relative", "era": "paleozoic", "length": "~1–2.5 m", "mass": "~5–20 kg", "genTime": "~5–10 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Elpistostegalia" }] },
-    { "id": 16, "mya": 365, "time": "~365 Ma", "name": "Early tetrapod", "group": "Stem Tetrapoda", "fossils": "Acanthostega, Ichthyostega", "innovation": "Digits, limbs, weight-bearing experiments, new ear/neck mechanics", "confidence": "High clade, medium timing", "era": "paleozoic", "length": "~60 cm – 1.5 m", "mass": "~5–15 kg", "genTime": "~5–10 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Tetrapod" }] },
-    { "id": 17, "mya": 330, "time": "~340–320 Ma", "name": "Reptiliomorph", "group": "Amniote stem", "fossils": "Seymouria, Diadectes-like exemplars", "innovation": "More terrestrial skeleton, stronger ribs/limbs, reduced water dependence", "confidence": "Medium", "era": "paleozoic", "length": "~60 cm – 1.5 m", "mass": "~5–20 kg", "genTime": "~3–8 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Reptiliomorpha" }] },
-    { "id": 18, "mya": 316, "time": "~320–312 Ma", "name": "Early amniote", "group": "Amniota", "fossils": "Hylonomus, Westlothiana-type candidates", "innovation": "Amniotic egg, claws, drier skin, fully terrestrial reproduction", "confidence": "High clade, medium fossils", "era": "paleozoic", "length": "~20–25 cm", "mass": "~50–200 g", "genTime": "~1–3 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Amniote" }] },
-    { "id": 19, "mya": 310, "time": "~315–306 Ma", "name": "Basal synapsid", "group": "Synapsida", "fossils": "Archaeothyris, Protoclepsydrops", "innovation": "Single temporal opening; stronger jaw muscles — mammal-side skull begins", "confidence": "High", "era": "paleozoic", "length": "~50 cm", "mass": "~1–2 kg", "genTime": "~2–5 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Synapsid" }] },
-    { "id": 20, "mya": 292, "time": "~300–285 Ma", "name": "Sphenacodontian", "group": "Sphenacodontia", "fossils": "Haptodus, Dimetrodon", "innovation": "Larger canines, deeper skull, dominant terrestrial predator body plan", "confidence": "High-ish side-branch exemplar", "era": "paleozoic", "length": "~1–3.5 m", "mass": "~30–250 kg", "genTime": "~5–10 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Sphenacodontia" }] },
-    { "id": 21, "mya": 265, "time": "~270–260 Ma", "name": "Early therapsid", "group": "Therapsida", "fossils": "Raranimus, Biarmosuchus", "innovation": "More upright limbs, differentiated teeth, enlarged temporal fenestra", "confidence": "High clade, medium exemplar", "era": "paleozoic", "length": "~1.5–2 m", "mass": "~20–40 kg", "genTime": "~5–8 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Therapsida" }] },
-    { "id": 22, "mya": 257, "time": "~260–255 Ma", "name": "Theriodont", "group": "Theriodontia / Eutheriodontia", "fossils": "Therocephalians, early gorgonopsians as cousins", "innovation": "More active metabolism, canine specialization, secondary-palate trend", "confidence": "Medium-high", "era": "paleozoic", "length": "~1–2 m", "mass": "~10–30 kg", "genTime": "~4–8 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Theriodontia" }] },
-    { "id": 23, "mya": 252, "time": "~254–251 Ma", "name": "Basal cynodont", "group": "Cynodontia", "fossils": "Procynosuchus", "innovation": "Mammal-like teeth, secondary palate, larger jaw muscles, possible whisker/fur precursors", "confidence": "High", "era": "paleozoic", "length": "~60 cm", "mass": "~3–5 kg", "genTime": "~2–4 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Cynodont" }] },
-    { "id": 24, "mya": 249, "time": "~251–247 Ma", "name": "Triassic cynodont survivor", "group": "Cynodontia", "fossils": "Thrinaxodon", "innovation": "Burrowing, small active body, survival through P–T aftermath", "confidence": "High as cousin", "era": "mesozoic", "length": "~30–50 cm", "mass": "~1–2 kg", "genTime": "~1–3 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Thrinaxodon" }] },
-    { "id": 25, "mya": 240, "time": "~245–235 Ma", "name": "Advanced cynodont", "group": "Eucynodontia", "fossils": "Cynognathus, Diademodon", "innovation": "Better chewing, more upright gait, faster growth/metabolism", "confidence": "High clade, medium exemplar", "era": "mesozoic", "length": "~1–1.2 m", "mass": "~10–20 kg", "genTime": "~3–5 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Eucynodontia" }] },
-    { "id": 26, "mya": 230, "time": "~235–225 Ma", "name": "Probainognathian", "group": "Probainognathia", "fossils": "Brasilodon, Riograndia, Probainognathus", "innovation": "Mammal-like tooth replacement, jaw-joint experimentation, smaller body", "confidence": "High, but details debated", "era": "mesozoic", "length": "~12–40 cm", "mass": "~20–200 g", "genTime": "~1–2 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Probainognathia" }] },
-    { "id": 27, "mya": 202, "time": "~205–200 Ma", "name": "Mammaliaform", "group": "Mammaliaformes", "fossils": "Morganucodon", "innovation": "Dentary–squamosal jaw joint, middle-ear transition, hair, insectivory", "confidence": "High", "era": "mesozoic", "length": "~10 cm", "mass": "~25–30 g", "genTime": "~1 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Mammaliaformes" }] },
-    { "id": 28, "mya": 182, "time": "~195–170 Ma", "name": "Early mammal-grade", "group": "Mammalia / mammaliaform grade", "fossils": "Hadrocodium, docodont-like cousins", "innovation": "Larger braincase, sharper hearing, miniaturized nocturnal niche", "confidence": "Medium-high", "era": "mesozoic", "length": "~5–8 cm", "mass": "~2–5 g", "genTime": "~6 mo – 1 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Mammalia" }] },
-    { "id": 29, "mya": 162, "time": "~165–160 Ma", "name": "Therian stem", "group": "Theria stem / early Eutheria", "fossils": "Juramaia", "innovation": "Lineage toward placentals separates from marsupial line; arboreal/scansorial traits", "confidence": "Medium-high", "era": "mesozoic", "length": "~7–10 cm", "mass": "~15–25 g", "genTime": "~6 mo – 1 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Theria" }] },
-    { "id": 30, "mya": 112, "time": "~125–100 Ma", "name": "Early eutherian", "group": "Eutheria", "fossils": "Eomaia scansoria", "innovation": "Placental-line anatomy, fur, climbing, tribosphenic molars", "confidence": "High clade, medium ancestor status", "era": "mesozoic", "length": "~10–14 cm", "mass": "~20–25 g", "genTime": "~6 mo – 1 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Eutheria" }] },
-    { "id": 31, "mya": 95, "time": "~100–90 Ma", "name": "Boreoeutherian ancestor", "group": "Boreoeutheria / Euarchontoglires", "fossils": "No good body fossil; molecular node", "innovation": "Placental diversification; primates + rodents/lagomorphs branch", "confidence": "High genetic, low fossil", "era": "mesozoic", "length": "~10–15 cm", "mass": "~30–100 g", "genTime": "~6 mo – 1 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Boreoeutheria" }] },
-    { "id": 32, "mya": 66, "time": "~66 Ma", "name": "Primate stem", "group": "Plesiadapiformes / Primatomorpha", "fossils": "Purgatorius", "innovation": "Arboreal life, fruit/insect diet, grasping tendency after K–Pg", "confidence": "Medium-high", "era": "cenozoic", "length": "~10–15 cm", "mass": "~20–40 g", "genTime": "~6 mo – 1 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Plesiadapiformes" }] },
-    { "id": 33, "mya": 53, "time": "~56–50 Ma", "name": "True primate", "group": "Euprimates", "fossils": "Teilhardina, Archicebus", "innovation": "Nails, grasping hands/feet, forward-facing eyes, leaping/climbing", "confidence": "Medium-high", "era": "cenozoic", "length": "~7–15 cm", "mass": "~20–30 g", "genTime": "~1 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Primate" }] },
-    { "id": 34, "mya": 42, "time": "~45–40 Ma", "name": "Anthropoid", "group": "Anthropoidea", "fossils": "Eosimias, Anthrasimias", "innovation": "Monkey/ape/human line: enhanced vision, shorter snout, enclosed eye sockets", "confidence": "Medium", "era": "cenozoic", "length": "~15–20 cm", "mass": "~100–300 g", "genTime": "~1–2 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Simian" }] },
-    { "id": 35, "mya": 29, "time": "~30–28 Ma", "name": "Catarrhine", "group": "Catarrhini", "fossils": "Aegyptopithecus zeuxis", "innovation": "Old World monkey + ape line; two premolars; larger brain/body", "confidence": "Medium-high", "era": "cenozoic", "length": "~50 cm", "mass": "~6–7 kg", "genTime": "~4–6 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Catarrhini" }] },
-    { "id": 36, "mya": 20, "time": "~23–18 Ma", "name": "Early ape", "group": "Hominoidea", "fossils": "Proconsul, Morotopithecus", "innovation": "Tail loss, more mobile shoulders/back, ape-like climbing", "confidence": "Medium-high", "era": "cenozoic", "length": "~50–80 cm", "mass": "~10–40 kg", "genTime": "~6–8 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Hominoidea" }] },
-    { "id": 37, "mya": 12, "time": "~14–10 Ma", "name": "Great-ape stem", "group": "Hominidae / Homininae", "fossils": "Sivapithecus, Dryopithecus, Nakalipithecus", "innovation": "Larger-bodied apes, suspensory climbing, great-ape face/dentition trends", "confidence": "Medium-low", "era": "cenozoic", "length": "~80–120 cm", "mass": "~40–80 kg", "genTime": "~8–12 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Hominidae" }] },
-    { "id": 38, "mya": 6.5, "time": "~7–6 Ma", "name": "Hominin origin", "group": "Hominini", "fossils": "Sahelanthropus, Orrorin, Ardipithecus kadabba", "innovation": "Smaller canines, possible early bipedality, human/chimp split zone", "confidence": "Medium, debated", "era": "cenozoic", "length": "~100–120 cm", "mass": "~30–50 kg", "genTime": "~8–12 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Hominini" }] },
-    { "id": 39, "mya": 4.4, "time": "~4.4 Ma", "name": "Early hominin mosaic", "group": "Ardipithecus", "fossils": "Ardipithecus ramidus \"Ardi\"", "innovation": "Bipedal traits plus grasping big toe; glorious weird middle", "confidence": "Medium-high", "era": "cenozoic", "length": "~120 cm", "mass": "~50 kg", "genTime": "~8–12 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Ardipithecus" }] },
-    { "id": 40, "mya": 3.6, "time": "~4.2–3.0 Ma", "name": "Australopith biped", "group": "Australopithecus", "fossils": "A. anamensis, A. afarensis \"Lucy\"", "innovation": "Habitual bipedality, humanlike pelvis/knee, still small brain", "confidence": "High", "era": "cenozoic", "length": "~100–150 cm", "mass": "~25–45 kg", "genTime": "~8–12 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Australopithecus" }] },
-    { "id": 41, "mya": 2.3, "time": "~2.8–1.8 Ma", "name": "Early Homo", "group": "Homo stem", "fossils": "LD 350-1 jaw, H. habilis, H. rudolfensis", "innovation": "Bigger brain trend, smaller teeth, tools/stone-flaking ecology", "confidence": "Medium", "era": "cenozoic", "length": "~100–135 cm", "mass": "~30–35 kg", "genTime": "~10–15 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Homo" }] },
-    { "id": 42, "mya": 1.0, "time": "~1.9 Ma – 150 ka", "name": "Long-legged human", "group": "Homo erectus / ergaster", "fossils": "Turkana Boy, Dmanisi fossils, Java fossils", "innovation": "Humanlike body plan, endurance walking/running, dispersal beyond Africa", "confidence": "High-ish", "era": "cenozoic", "length": "~150–180 cm", "mass": "~50–65 kg", "genTime": "~12–18 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Homo_erectus" }] },
-    { "id": 43, "mya": 0.5, "time": "~700–300 ka", "name": "Middle Pleistocene Homo", "group": "H. heidelbergensis / bodoensis debate", "fossils": "Sima de los Huesos, Kabwe, Bodo", "innovation": "Large brains, big-game hunting, near sapiens–Neanderthal–Denisovan split", "confidence": "Medium, taxonomy messy", "era": "cenozoic", "length": "~160–175 cm", "mass": "~60–80 kg", "genTime": "~15–20 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Homo_heidelbergensis" }] },
-    { "id": 44, "mya": 0.257, "time": "~315–200 ka", "name": "Early Homo sapiens", "group": "Homo sapiens stem", "fossils": "Jebel Irhoud, Omo Kibish, Herto", "innovation": "Modern face emerging, braincase becoming globular, complex tools", "confidence": "High species, medium population structure", "era": "cenozoic", "length": "~165–175 cm", "mass": "~55–75 kg", "genTime": "~18–25 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Early_modern_human" }] },
-    { "id": 45, "mya": 0.1, "time": "~200–60 ka → present", "name": "Recent modern humans", "group": "Homo sapiens sapiens", "fossils": "Skhul/Qafzeh, later African and Eurasian fossils", "innovation": "Symbolic culture, language-rich societies, global dispersal, cumulative tech", "confidence": "High", "era": "cenozoic", "length": "~170 cm", "mass": "~60–70 kg", "genTime": "~25–30 yr", "links": [{ "label": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Homo_sapiens" }] }
+    {
+      "id": 1,
+      "mya": 4200,
+      "time": "~4.2 Ga",
+      "name": "LUCA",
+      "group": "Last universal common ancestor",
+      "fossils": "No fossil; inferred from shared genes",
+      "innovation": "DNA/RNA/protein system, ribosomes, ATP metabolism, cellular life",
+      "confidence": "High lineage, low visual detail",
+      "era": "archean",
+      "length": "~1–2 μm",
+      "mass": "~1 pg",
+      "genTime": "~1–10 hr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Last_universal_common_ancestor"
+        }
+      ],
+      "intro": "LUCA is the inferred population from which all known life descends. It was not a modern bacterium or archaeon, but it already carried the core molecular machinery shared by cells today."
+    },
+    {
+      "id": 2,
+      "mya": 2250,
+      "time": "~2.7–1.8 Ga",
+      "name": "Proto-eukaryote",
+      "group": "Archaeal host + bacterial symbiont",
+      "fossils": "No fossil; Asgard-archaeal-style model",
+      "innovation": "Mitochondrial endosymbiosis begins; larger, more complex cells",
+      "confidence": "Medium",
+      "era": "archean",
+      "length": "~5–15 μm",
+      "mass": "~10–100 pg",
+      "genTime": "~12–24 hr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Eukaryogenesis"
+        }
+      ],
+      "intro": "This stage represents the lineage near the origin of eukaryotic cells. A merger between an archaeal host and a bacterial partner set the stage for mitochondria and the larger, more compartmentalized cells that later animals would inherit."
+    },
+    {
+      "id": 3,
+      "mya": 1650,
+      "time": "~1.8–1.5 Ga",
+      "name": "LECA",
+      "group": "Last eukaryotic common ancestor",
+      "fossils": "No direct fossil; protosterol-biota as broad early-eukaryote signal",
+      "innovation": "Nucleus, mitochondria, cytoskeleton, membrane trafficking, likely sex",
+      "confidence": "High clade, medium timing",
+      "era": "proterozoic",
+      "length": "~10–30 μm",
+      "mass": "~1 ng",
+      "genTime": "~1 day",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Last_eukaryotic_common_ancestor"
+        }
+      ],
+      "intro": "LECA was the common ancestor of living eukaryotes, including plants, fungi, protists, and animals. By this point the lineage likely had a nucleus, mitochondria, internal membranes, a cytoskeleton, and some form of sexual recombination."
+    },
+    {
+      "id": 4,
+      "mya": 1100,
+      "time": "~1.2–1.0 Ga",
+      "name": "Opisthokont ancestor",
+      "group": "Opisthokonta",
+      "fossils": "No secure fossil; living analogues: fungi/animals/choanoflagellates",
+      "innovation": "Rear flagellum, phagocytosis, cell-signaling toolkit",
+      "confidence": "Medium",
+      "era": "proterozoic",
+      "length": "~10–20 μm",
+      "mass": "~1 ng",
+      "genTime": "~1 day",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Opisthokont"
+        }
+      ],
+      "intro": "Opisthokonts are the broader branch that includes animals, fungi, and their microbial relatives. Our ancestry here was still single-celled, but it carried feeding, movement, and signaling traits that later helped make animal multicellularity possible."
+    },
+    {
+      "id": 5,
+      "mya": 800,
+      "time": "~900–700 Ma",
+      "name": "Choanoflagellate-like holozoan",
+      "group": "Holozoa",
+      "fossils": "Living analogues: Salpingoeca, choanoflagellates",
+      "innovation": "Collar cells, bacterial feeding, colony-forming potential",
+      "confidence": "Medium-high",
+      "era": "proterozoic",
+      "length": "~5–10 μm cell; colonies ~100 μm",
+      "mass": "~1 ng",
+      "genTime": "~1 day",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Choanoflagellate"
+        }
+      ],
+      "intro": "Choanoflagellates are not our ancestors, but they are close living relatives of animals and useful analogues for this stage. Their collar cells, bacterial feeding, and ability to form colonies help illustrate the toolkit near the animal transition."
+    },
+    {
+      "id": 6,
+      "mya": 667,
+      "time": "~700–635 Ma",
+      "name": "Stem animal, sponge-grade",
+      "group": "Metazoa stem",
+      "fossils": "Possible sponge biomarkers/body fossils, debated",
+      "innovation": "Stable multicellularity, cell adhesion, developmental gene regulation",
+      "confidence": "Medium",
+      "era": "proterozoic",
+      "length": "~1–10 mm",
+      "mass": "~0.01–0.1 g",
+      "genTime": "~months",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Animal"
+        }
+      ],
+      "intro": "The earliest animal-lineage organisms were probably simple, sponge-grade filter feeders. They mark a major shift from temporary cell clusters to durable multicellular bodies with specialized cells working together."
+    },
+    {
+      "id": 7,
+      "mya": 605,
+      "time": "~635–575 Ma",
+      "name": "Early eumetazoan-grade animal",
+      "group": "Eumetazoa stem",
+      "fossils": "Ediacaran soft-bodied animal candidates",
+      "innovation": "Tissues, nerves/muscles beginning, organized body axes",
+      "confidence": "Medium-low",
+      "era": "proterozoic",
+      "length": "~1–5 cm",
+      "mass": "~0.1–1 g",
+      "genTime": "~months",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Eumetazoa"
+        }
+      ],
+      "intro": "This stage sits near the origin of animals with organized tissues and body patterning. The fossil record is difficult here, but the lineage was moving toward coordinated cells, sensory systems, and more structured bodies."
+    },
+    {
+      "id": 8,
+      "mya": 557,
+      "time": "~560–555 Ma",
+      "name": "Urbilaterian-like worm",
+      "group": "Bilateria",
+      "fossils": "Ikaria wariootia",
+      "innovation": "Bilateral symmetry, front/back body plan, directed crawling, likely through-gut",
+      "confidence": "Medium-high",
+      "era": "proterozoic",
+      "length": "~2–7 mm",
+      "mass": "~0.01–0.1 g",
+      "genTime": "~weeks–months",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Urbilaterian"
+        }
+      ],
+      "intro": "Urbilaterian-like animals were small, wormlike organisms with a front end, back end, and left-right symmetry. That simple body plan opened the door to directed movement, burrowing, and the major animal branches alive today."
+    },
+    {
+      "id": 9,
+      "mya": 530,
+      "time": "~540–520 Ma",
+      "name": "Early deuterostome",
+      "group": "Deuterostomia stem",
+      "fossils": "No perfect exemplar; Saccorhytus placement revised",
+      "innovation": "Deuterostome developmental pattern, pharyngeal-region innovations",
+      "confidence": "Medium-low",
+      "era": "paleozoic",
+      "length": "~1–5 mm",
+      "mass": "~0.01 g",
+      "genTime": "~months",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Deuterostome"
+        }
+      ],
+      "intro": "Early deuterostomes were tiny animals near the branch that would eventually include echinoderms and chordates. Their importance is developmental: they sit on the side of animal evolution that later produced backboned animals."
+    },
+    {
+      "id": 10,
+      "mya": 513,
+      "time": "~518–508 Ma",
+      "name": "Early chordate",
+      "group": "Chordata",
+      "fossils": "Pikaia, Haikouella-like forms",
+      "innovation": "Notochord, dorsal nerve cord, segmented muscles",
+      "confidence": "Medium-high",
+      "era": "paleozoic",
+      "length": "~3–5 cm",
+      "mass": "~1–5 g",
+      "genTime": "~1 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Chordate"
+        }
+      ],
+      "intro": "Early chordates were small swimming animals with a notochord, dorsal nerve cord, and segmented muscles. They did not yet look like familiar vertebrates, but they established the basic body architecture our lineage still uses."
+    },
+    {
+      "id": 11,
+      "mya": 518,
+      "time": "~518 Ma",
+      "name": "Early vertebrate/craniate",
+      "group": "Vertebrata / Craniata",
+      "fossils": "Haikouichthys, Myllokunmingia",
+      "innovation": "Head, paired eyes, early backbone/skull tissues, active swimming",
+      "confidence": "High",
+      "era": "paleozoic",
+      "length": "~2.5 cm",
+      "mass": "~1–2 g",
+      "genTime": "~1 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Vertebrate"
+        }
+      ],
+      "intro": "Early vertebrate or craniate relatives added a distinct head, sensory organs, and stronger swimming machinery. These small Cambrian animals began the long vertebrate trend toward active movement and more complex nervous systems."
+    },
+    {
+      "id": 12,
+      "mya": 434,
+      "time": "~439–430 Ma",
+      "name": "Jawed vertebrate",
+      "group": "Gnathostomata",
+      "fossils": "Qianodus, Xiushanosteus, Entelognathus",
+      "innovation": "Jaws, teeth, paired appendage control, predatory feeding",
+      "confidence": "High clade, medium exemplar",
+      "era": "paleozoic",
+      "length": "~20 cm",
+      "mass": "~100–200 g",
+      "genTime": "~2–5 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Gnathostomata"
+        }
+      ],
+      "intro": "Jawed vertebrates transformed feeding and locomotion. Jaws, teeth, and paired appendages made vertebrates more versatile predators and set up the later split between cartilaginous and bony fish lineages."
+    },
+    {
+      "id": 13,
+      "mya": 422,
+      "time": "~425–420 Ma",
+      "name": "Bony fish ancestor",
+      "group": "Osteichthyes",
+      "fossils": "Guiyu oneiros",
+      "innovation": "Bony internal skeleton, tooth/jaw refinements, lung/swim-bladder lineage",
+      "confidence": "High",
+      "era": "paleozoic",
+      "length": "~30 cm",
+      "mass": "~200–500 g",
+      "genTime": "~3–5 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Osteichthyes"
+        }
+      ],
+      "intro": "Bony fish ancestors carried a mineralized skeleton and refinements to the jaws and teeth. This is the branch that eventually produced ray-finned fishes on one side and the lobe-finned lineage leading toward tetrapods on the other."
+    },
+    {
+      "id": 14,
+      "mya": 405,
+      "time": "~420–390 Ma",
+      "name": "Lobe-finned fish",
+      "group": "Sarcopterygii",
+      "fossils": "Psarolepis, Eusthenopteron",
+      "innovation": "Limb-like fin bones, stronger axial skeleton, air-breathing tendencies",
+      "confidence": "High clade, medium exemplar",
+      "era": "paleozoic",
+      "length": "~30–60 cm",
+      "mass": "~0.5–2 kg",
+      "genTime": "~3–5 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Sarcopterygii"
+        }
+      ],
+      "intro": "Lobe-finned fishes had robust internal bones inside their fins, not just delicate fin rays. Those limb-like supports, along with air-breathing tendencies in related lineages, became important preadaptations for life in shallow water and on land."
+    },
+    {
+      "id": 15,
+      "mya": 380,
+      "time": "~385–375 Ma",
+      "name": "Fishapod",
+      "group": "Elpistostegalia",
+      "fossils": "Panderichthys, Tiktaalik",
+      "innovation": "Neck, flat skull, wrist-like fin bones, shallow-water ambush ecology",
+      "confidence": "High as close relative",
+      "era": "paleozoic",
+      "length": "~1–2.5 m",
+      "mass": "~5–20 kg",
+      "genTime": "~5–10 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Elpistostegalia"
+        }
+      ],
+      "intro": "Fishapods such as Tiktaalik-like relatives lived in the ecological borderland between fish and early tetrapods. Flat heads, neck mobility, and wrist-like fin bones show a lineage experimenting with shallow-water movement before true limbs dominated."
+    },
+    {
+      "id": 16,
+      "mya": 365,
+      "time": "~365 Ma",
+      "name": "Early tetrapod",
+      "group": "Stem Tetrapoda",
+      "fossils": "Acanthostega, Ichthyostega",
+      "innovation": "Digits, limbs, weight-bearing experiments, new ear/neck mechanics",
+      "confidence": "High clade, medium timing",
+      "era": "paleozoic",
+      "length": "~60 cm – 1.5 m",
+      "mass": "~5–15 kg",
+      "genTime": "~5–10 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Tetrapod"
+        }
+      ],
+      "intro": "Early tetrapods had digits and limbs, though many still spent much of their lives in water. This stage marks the beginning of the vertebrate body plan that could push, prop, and eventually walk on land."
+    },
+    {
+      "id": 17,
+      "mya": 330,
+      "time": "~340–320 Ma",
+      "name": "Reptiliomorph",
+      "group": "Amniote stem",
+      "fossils": "Seymouria, Diadectes-like exemplars",
+      "innovation": "More terrestrial skeleton, stronger ribs/limbs, reduced water dependence",
+      "confidence": "Medium",
+      "era": "paleozoic",
+      "length": "~60 cm – 1.5 m",
+      "mass": "~5–20 kg",
+      "genTime": "~3–8 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Reptiliomorpha"
+        }
+      ],
+      "intro": "Reptiliomorphs were increasingly terrestrial tetrapods on the stem leading toward amniotes. Their stronger limbs, ribs, and drier-land habits helped reduce dependence on aquatic environments."
+    },
+    {
+      "id": 18,
+      "mya": 316,
+      "time": "~320–312 Ma",
+      "name": "Early amniote",
+      "group": "Amniota",
+      "fossils": "Hylonomus, Westlothiana-type candidates",
+      "innovation": "Amniotic egg, claws, drier skin, fully terrestrial reproduction",
+      "confidence": "High clade, medium fossils",
+      "era": "paleozoic",
+      "length": "~20–25 cm",
+      "mass": "~50–200 g",
+      "genTime": "~1–3 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Amniote"
+        }
+      ],
+      "intro": "Early amniotes solved one of the biggest problems of land life: reproduction away from water. The amniotic egg, tougher skin, and claws allowed this lineage to occupy drier habitats more fully."
+    },
+    {
+      "id": 19,
+      "mya": 310,
+      "time": "~315–306 Ma",
+      "name": "Basal synapsid",
+      "group": "Synapsida",
+      "fossils": "Archaeothyris, Protoclepsydrops",
+      "innovation": "Single temporal opening; stronger jaw muscles — mammal-side skull begins",
+      "confidence": "High",
+      "era": "paleozoic",
+      "length": "~50 cm",
+      "mass": "~1–2 kg",
+      "genTime": "~2–5 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Synapsid"
+        }
+      ],
+      "intro": "Basal synapsids were early members of the mammal-side branch of amniotes. The key skull opening behind the eye gave jaw muscles more room, beginning a long trend toward powerful and specialized feeding."
+    },
+    {
+      "id": 20,
+      "mya": 292,
+      "time": "~300–285 Ma",
+      "name": "Sphenacodontian",
+      "group": "Sphenacodontia",
+      "fossils": "Haptodus, Dimetrodon",
+      "innovation": "Larger canines, deeper skull, dominant terrestrial predator body plan",
+      "confidence": "High-ish side-branch exemplar",
+      "era": "paleozoic",
+      "length": "~1–3.5 m",
+      "mass": "~30–250 kg",
+      "genTime": "~5–10 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Sphenacodontia"
+        }
+      ],
+      "intro": "Sphenacodontians were larger predatory synapsids and close relatives of the line that led to therapsids. Dimetrodon is the famous side-branch example, useful for showing how mammal-line skulls and teeth were changing before mammals existed."
+    },
+    {
+      "id": 21,
+      "mya": 265,
+      "time": "~270–260 Ma",
+      "name": "Early therapsid",
+      "group": "Therapsida",
+      "fossils": "Raranimus, Biarmosuchus",
+      "innovation": "More upright limbs, differentiated teeth, enlarged temporal fenestra",
+      "confidence": "High clade, medium exemplar",
+      "era": "paleozoic",
+      "length": "~1.5–2 m",
+      "mass": "~20–40 kg",
+      "genTime": "~5–8 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Therapsida"
+        }
+      ],
+      "intro": "Early therapsids pushed synapsids toward more upright limbs, differentiated teeth, and more active lifestyles. They were still far from mammals, but many of the broad mammal-like trends became clearer here."
+    },
+    {
+      "id": 22,
+      "mya": 257,
+      "time": "~260–255 Ma",
+      "name": "Theriodont",
+      "group": "Theriodontia / Eutheriodontia",
+      "fossils": "Therocephalians, early gorgonopsians as cousins",
+      "innovation": "More active metabolism, canine specialization, secondary-palate trend",
+      "confidence": "Medium-high",
+      "era": "paleozoic",
+      "length": "~1–2 m",
+      "mass": "~10–30 kg",
+      "genTime": "~4–8 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Theriodontia"
+        }
+      ],
+      "intro": "Theriodonts include the therapsid lineages closest to mammals. Features such as more specialized canines, changes to the palate, and increasingly active metabolism point toward the later cynodont condition."
+    },
+    {
+      "id": 23,
+      "mya": 252,
+      "time": "~254–251 Ma",
+      "name": "Basal cynodont",
+      "group": "Cynodontia",
+      "fossils": "Procynosuchus",
+      "innovation": "Mammal-like teeth, secondary palate, larger jaw muscles, possible whisker/fur precursors",
+      "confidence": "High",
+      "era": "paleozoic",
+      "length": "~60 cm",
+      "mass": "~3–5 kg",
+      "genTime": "~2–4 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Cynodont"
+        }
+      ],
+      "intro": "Basal cynodonts brought the mammal-like pattern into sharper focus. Their jaws, teeth, and possible whisker or fur precursors show a lineage becoming smaller, more active, and more precise in feeding."
+    },
+    {
+      "id": 24,
+      "mya": 249,
+      "time": "~251–247 Ma",
+      "name": "Triassic cynodont survivor",
+      "group": "Cynodontia",
+      "fossils": "Thrinaxodon",
+      "innovation": "Burrowing, small active body, survival through P–T aftermath",
+      "confidence": "High as cousin",
+      "era": "mesozoic",
+      "length": "~30–50 cm",
+      "mass": "~1–2 kg",
+      "genTime": "~1–3 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Thrinaxodon"
+        }
+      ],
+      "intro": "Triassic cynodont survivors lived through the aftermath of the Permian-Triassic extinction. Small, burrowing forms such as Thrinaxodon-like cousins illustrate how mammal-line animals persisted in a harsh, changing world."
+    },
+    {
+      "id": 25,
+      "mya": 240,
+      "time": "~245–235 Ma",
+      "name": "Advanced cynodont",
+      "group": "Eucynodontia",
+      "fossils": "Cynognathus, Diademodon",
+      "innovation": "Better chewing, more upright gait, faster growth/metabolism",
+      "confidence": "High clade, medium exemplar",
+      "era": "mesozoic",
+      "length": "~1–1.2 m",
+      "mass": "~10–20 kg",
+      "genTime": "~3–5 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Eucynodontia"
+        }
+      ],
+      "intro": "Advanced cynodonts improved chewing and posture while experimenting with a range of body sizes and diets. This stage sits close to the narrowing corridor that would eventually produce mammaliaforms."
+    },
+    {
+      "id": 26,
+      "mya": 230,
+      "time": "~235–225 Ma",
+      "name": "Probainognathian",
+      "group": "Probainognathia",
+      "fossils": "Brasilodon, Riograndia, Probainognathus",
+      "innovation": "Mammal-like tooth replacement, jaw-joint experimentation, smaller body",
+      "confidence": "High, but details debated",
+      "era": "mesozoic",
+      "length": "~12–40 cm",
+      "mass": "~20–200 g",
+      "genTime": "~1–2 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Probainognathia"
+        }
+      ],
+      "intro": "Probainognathians were small, increasingly mammal-like cynodonts with important jaw and tooth changes. Their lineage experimented with the transition from reptile-style jaw joints toward the mammalian jaw and middle ear."
+    },
+    {
+      "id": 27,
+      "mya": 202,
+      "time": "~205–200 Ma",
+      "name": "Mammaliaform",
+      "group": "Mammaliaformes",
+      "fossils": "Morganucodon",
+      "innovation": "Dentary–squamosal jaw joint, middle-ear transition, hair, insectivory",
+      "confidence": "High",
+      "era": "mesozoic",
+      "length": "~10 cm",
+      "mass": "~25–30 g",
+      "genTime": "~1 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Mammaliaformes"
+        }
+      ],
+      "intro": "Mammaliaforms such as Morganucodon-like relatives were tiny, likely nocturnal insect eaters. They show the emergence of the definitive mammal jaw joint and the hearing changes that helped mammals thrive in small-bodied niches."
+    },
+    {
+      "id": 28,
+      "mya": 182,
+      "time": "~195–170 Ma",
+      "name": "Early mammal-grade",
+      "group": "Mammalia / mammaliaform grade",
+      "fossils": "Hadrocodium, docodont-like cousins",
+      "innovation": "Larger braincase, sharper hearing, miniaturized nocturnal niche",
+      "confidence": "Medium-high",
+      "era": "mesozoic",
+      "length": "~5–8 cm",
+      "mass": "~2–5 g",
+      "genTime": "~6 mo – 1 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Mammalia"
+        }
+      ],
+      "intro": "Early mammal-grade animals refined the small, sharp-hearing, nocturnal body plan. Larger braincases, sensitive senses, and diverse teeth helped mammals exploit ecological spaces dominated elsewhere by dinosaurs."
+    },
+    {
+      "id": 29,
+      "mya": 162,
+      "time": "~165–160 Ma",
+      "name": "Therian stem",
+      "group": "Theria stem / early Eutheria",
+      "fossils": "Juramaia",
+      "innovation": "Lineage toward placentals separates from marsupial line; arboreal/scansorial traits",
+      "confidence": "Medium-high",
+      "era": "mesozoic",
+      "length": "~7–10 cm",
+      "mass": "~15–25 g",
+      "genTime": "~6 mo – 1 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Theria"
+        }
+      ],
+      "intro": "The therian stem marks the broader lineage leading toward live-bearing mammals, including marsupials and placentals. Fossils such as Juramaia-like forms suggest small climbing animals near the split between major mammal branches."
+    },
+    {
+      "id": 30,
+      "mya": 112,
+      "time": "~125–100 Ma",
+      "name": "Early eutherian",
+      "group": "Eutheria",
+      "fossils": "Eomaia scansoria",
+      "innovation": "Placental-line anatomy, fur, climbing, tribosphenic molars",
+      "confidence": "High clade, medium ancestor status",
+      "era": "mesozoic",
+      "length": "~10–14 cm",
+      "mass": "~20–25 g",
+      "genTime": "~6 mo – 1 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Eutheria"
+        }
+      ],
+      "intro": "Early eutherians were close to the placental side of mammal evolution. They were small, furry, and probably agile, with teeth and limbs suited to climbing and insect-rich diets."
+    },
+    {
+      "id": 31,
+      "mya": 95,
+      "time": "~100–90 Ma",
+      "name": "Boreoeutherian ancestor",
+      "group": "Boreoeutheria / Euarchontoglires",
+      "fossils": "No good body fossil; molecular node",
+      "innovation": "Placental diversification; primates + rodents/lagomorphs branch",
+      "confidence": "High genetic, low fossil",
+      "era": "mesozoic",
+      "length": "~10–15 cm",
+      "mass": "~30–100 g",
+      "genTime": "~6 mo – 1 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Boreoeutheria"
+        }
+      ],
+      "intro": "The boreoeutherian ancestor is mostly known from genetic and comparative evidence rather than a clear body fossil. It represents the placental branch from which primates, rodents, carnivorans, bats, ungulates, and many other mammals later diversified."
+    },
+    {
+      "id": 32,
+      "mya": 66,
+      "time": "~66 Ma",
+      "name": "Primate stem",
+      "group": "Plesiadapiformes / Primatomorpha",
+      "fossils": "Purgatorius",
+      "innovation": "Arboreal life, fruit/insect diet, grasping tendency after K–Pg",
+      "confidence": "Medium-high",
+      "era": "cenozoic",
+      "length": "~10–15 cm",
+      "mass": "~20–40 g",
+      "genTime": "~6 mo – 1 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Plesiadapiformes"
+        }
+      ],
+      "intro": "Primate-stem mammals appeared around the end-Cretaceous extinction and early Paleocene recovery. Purgatorius-like animals were small arboreal mammals, probably using grasping and flexible movement in tree-rich habitats."
+    },
+    {
+      "id": 33,
+      "mya": 53,
+      "time": "~56–50 Ma",
+      "name": "True primate",
+      "group": "Euprimates",
+      "fossils": "Teilhardina, Archicebus",
+      "innovation": "Nails, grasping hands/feet, forward-facing eyes, leaping/climbing",
+      "confidence": "Medium-high",
+      "era": "cenozoic",
+      "length": "~7–15 cm",
+      "mass": "~20–30 g",
+      "genTime": "~1 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Primate"
+        }
+      ],
+      "intro": "True primates added a more recognizable suite of traits: grasping hands and feet, nails, and forward-facing eyes. These adaptations made sense in trees, where judging distance and holding branches mattered."
+    },
+    {
+      "id": 34,
+      "mya": 42,
+      "time": "~45–40 Ma",
+      "name": "Anthropoid",
+      "group": "Anthropoidea",
+      "fossils": "Eosimias, Anthrasimias",
+      "innovation": "Monkey/ape/human line: enhanced vision, shorter snout, enclosed eye sockets",
+      "confidence": "Medium",
+      "era": "cenozoic",
+      "length": "~15–20 cm",
+      "mass": "~100–300 g",
+      "genTime": "~1–2 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Simian"
+        }
+      ],
+      "intro": "Anthropoids are the monkey, ape, and human side of the primate tree. Shorter snouts, enhanced vision, and more enclosed eye sockets point toward the sensory world of later monkeys and apes."
+    },
+    {
+      "id": 35,
+      "mya": 29,
+      "time": "~30–28 Ma",
+      "name": "Catarrhine",
+      "group": "Catarrhini",
+      "fossils": "Aegyptopithecus zeuxis",
+      "innovation": "Old World monkey + ape line; two premolars; larger brain/body",
+      "confidence": "Medium-high",
+      "era": "cenozoic",
+      "length": "~50 cm",
+      "mass": "~6–7 kg",
+      "genTime": "~4–6 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Catarrhini"
+        }
+      ],
+      "intro": "Catarrhines are the Old World monkey and ape branch. This stage captures the lineage after it split from New World monkeys, with dental and body-size trends that would later lead toward apes."
+    },
+    {
+      "id": 36,
+      "mya": 20,
+      "time": "~23–18 Ma",
+      "name": "Early ape",
+      "group": "Hominoidea",
+      "fossils": "Proconsul, Morotopithecus",
+      "innovation": "Tail loss, more mobile shoulders/back, ape-like climbing",
+      "confidence": "Medium-high",
+      "era": "cenozoic",
+      "length": "~50–80 cm",
+      "mass": "~10–40 kg",
+      "genTime": "~6–8 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Hominoidea"
+        }
+      ],
+      "intro": "Early apes lacked tails and had shoulders and backs suited for more varied climbing. They were not yet great apes or humans, but they mark the start of a body plan built around flexible movement in trees."
+    },
+    {
+      "id": 37,
+      "mya": 12,
+      "time": "~14–10 Ma",
+      "name": "Great-ape stem",
+      "group": "Hominidae / Homininae",
+      "fossils": "Sivapithecus, Dryopithecus, Nakalipithecus",
+      "innovation": "Larger-bodied apes, suspensory climbing, great-ape face/dentition trends",
+      "confidence": "Medium-low",
+      "era": "cenozoic",
+      "length": "~80–120 cm",
+      "mass": "~40–80 kg",
+      "genTime": "~8–12 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Hominidae"
+        }
+      ],
+      "intro": "Great-ape-stem relatives were larger-bodied apes with suspensory climbing habits and changing faces and teeth. The exact fossil relationships are debated, but this is the neighborhood of the lineage leading toward African apes and humans."
+    },
+    {
+      "id": 38,
+      "mya": 6.5,
+      "time": "~7–6 Ma",
+      "name": "Hominin origin",
+      "group": "Hominini",
+      "fossils": "Sahelanthropus, Orrorin, Ardipithecus kadabba",
+      "innovation": "Smaller canines, possible early bipedality, human/chimp split zone",
+      "confidence": "Medium, debated",
+      "era": "cenozoic",
+      "length": "~100–120 cm",
+      "mass": "~30–50 kg",
+      "genTime": "~8–12 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Hominini"
+        }
+      ],
+      "intro": "Hominin origins sit near the split between the human and chimpanzee lineages. Fossils from this interval are fragmentary and debated, but smaller canines and possible early bipedality hint at the beginning of the human branch."
+    },
+    {
+      "id": 39,
+      "mya": 4.4,
+      "time": "~4.4 Ma",
+      "name": "Early hominin mosaic",
+      "group": "Ardipithecus",
+      "fossils": "Ardipithecus ramidus \"Ardi\"",
+      "innovation": "Bipedal traits plus grasping big toe; glorious weird middle",
+      "confidence": "Medium-high",
+      "era": "cenozoic",
+      "length": "~120 cm",
+      "mass": "~50 kg",
+      "genTime": "~8–12 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Ardipithecus"
+        }
+      ],
+      "intro": "Ardipithecus-like hominins show a mosaic of traits rather than a simple halfway form. They combined bipedal features with climbing adaptations, reminding us that early human evolution was not a straight march toward modern anatomy."
+    },
+    {
+      "id": 40,
+      "mya": 3.6,
+      "time": "~4.2–3.0 Ma",
+      "name": "Australopith biped",
+      "group": "Australopithecus",
+      "fossils": "A. anamensis, A. afarensis \"Lucy\"",
+      "innovation": "Habitual bipedality, humanlike pelvis/knee, still small brain",
+      "confidence": "High",
+      "era": "cenozoic",
+      "length": "~100–150 cm",
+      "mass": "~25–45 kg",
+      "genTime": "~8–12 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Australopithecus"
+        }
+      ],
+      "intro": "Australopiths were habitual bipeds with small brains and bodies still adapted partly for climbing. They made walking on two legs a central part of the hominin lifestyle long before large brains evolved."
+    },
+    {
+      "id": 41,
+      "mya": 2.3,
+      "time": "~2.8–1.8 Ma",
+      "name": "Early Homo",
+      "group": "Homo stem",
+      "fossils": "LD 350-1 jaw, H. habilis, H. rudolfensis",
+      "innovation": "Bigger brain trend, smaller teeth, tools/stone-flaking ecology",
+      "confidence": "Medium",
+      "era": "cenozoic",
+      "length": "~100–135 cm",
+      "mass": "~30–35 kg",
+      "genTime": "~10–15 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Homo"
+        }
+      ],
+      "intro": "Early Homo marks a messy transition involving larger brains, smaller teeth, and more intensive tool-related behavior. The fossils do not form a neat ladder, but they show a lineage experimenting with new diets, hands, and cognition."
+    },
+    {
+      "id": 42,
+      "mya": 1,
+      "time": "~1.9 Ma – 150 ka",
+      "name": "Long-legged human",
+      "group": "Homo erectus / ergaster",
+      "fossils": "Turkana Boy, Dmanisi fossils, Java fossils",
+      "innovation": "Humanlike body plan, endurance walking/running, dispersal beyond Africa",
+      "confidence": "High-ish",
+      "era": "cenozoic",
+      "length": "~150–180 cm",
+      "mass": "~50–65 kg",
+      "genTime": "~12–18 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Homo_erectus"
+        }
+      ],
+      "intro": "Homo erectus and ergaster-like humans had long legs, larger bodies, and endurance-oriented movement. They were the first human relatives to spread widely beyond Africa and maintained a successful body plan for a very long time."
+    },
+    {
+      "id": 43,
+      "mya": 0.5,
+      "time": "~700–300 ka",
+      "name": "Middle Pleistocene Homo",
+      "group": "H. heidelbergensis / bodoensis debate",
+      "fossils": "Sima de los Huesos, Kabwe, Bodo",
+      "innovation": "Large brains, big-game hunting, near sapiens–Neanderthal–Denisovan split",
+      "confidence": "Medium, taxonomy messy",
+      "era": "cenozoic",
+      "length": "~160–175 cm",
+      "mass": "~60–80 kg",
+      "genTime": "~15–20 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Homo_heidelbergensis"
+        }
+      ],
+      "intro": "Middle Pleistocene Homo sits near the ancestry of Homo sapiens, Neanderthals, and Denisovans. Taxonomy is contested, but these populations had large brains, complex hunting, and growing cultural sophistication."
+    },
+    {
+      "id": 44,
+      "mya": 0.257,
+      "time": "~315–200 ka",
+      "name": "Early Homo sapiens",
+      "group": "Homo sapiens stem",
+      "fossils": "Jebel Irhoud, Omo Kibish, Herto",
+      "innovation": "Modern face emerging, braincase becoming globular, complex tools",
+      "confidence": "High species, medium population structure",
+      "era": "cenozoic",
+      "length": "~165–175 cm",
+      "mass": "~55–75 kg",
+      "genTime": "~18–25 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Early_modern_human"
+        }
+      ],
+      "intro": "Early Homo sapiens populations show the emergence of the modern human face and a more globular braincase. They were part of a structured African population landscape rather than a single simple origin point."
+    },
+    {
+      "id": 45,
+      "mya": 0.1,
+      "time": "~200–60 ka → present",
+      "name": "Recent modern humans",
+      "group": "Homo sapiens sapiens",
+      "fossils": "Skhul/Qafzeh, later African and Eurasian fossils",
+      "innovation": "Symbolic culture, language-rich societies, global dispersal, cumulative tech",
+      "confidence": "High",
+      "era": "cenozoic",
+      "length": "~170 cm",
+      "mass": "~60–70 kg",
+      "genTime": "~25–30 yr",
+      "links": [
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Homo_sapiens"
+        }
+      ],
+      "intro": "Recent modern humans carried Homo sapiens into a global species with symbolic culture, language-rich societies, and cumulative technology. This final stage connects the deep lineage story to the living people who inherit it today."
+    }
   ]
 }
