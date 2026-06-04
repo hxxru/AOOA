@@ -551,6 +551,7 @@ h1 {
 .bottom-nav {
   height: 52px;
   min-height: 52px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -599,6 +600,14 @@ h1 {
 
 .stage-counter-current {
   color: #a1a1aa;
+}
+
+.app-version {
+  position: absolute;
+  right: 16px;
+  color: #52525b;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
 }
 
 @media (max-width: 760px) {
@@ -653,7 +662,8 @@ h1 {
     flex-direction: column;
   }
 
-  .main-shell {
+  .main-shell,
+  .page-content {
     touch-action: pan-y;
   }
 
@@ -779,6 +789,11 @@ h1 {
 
   .bottom-nav button {
     display: none;
+  }
+
+  .app-version {
+    right: 12px;
+    font-size: 10px;
   }
 
   .info-modal {

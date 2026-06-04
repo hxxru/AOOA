@@ -11,6 +11,7 @@ This repo is packaged for GitHub Pages. It includes the React app, the 45-stage 
 - On desktop, use the sidebar, arrow keys, Home/End, or the footer prev/next buttons.
 - On mobile, swipe left for the next stage and swipe right for the previous stage. The mobile footer keeps only the stage counter.
 - The info panel opens as a centered modal with a blurred backdrop.
+- The footer shows the version from `package.json`, so live deployments can be identified while testing.
 
 ## What is included
 
@@ -23,6 +24,7 @@ This repo is packaged for GitHub Pages. It includes the React app, the 45-stage 
 ├── src/styles.css                # Site styles
 ├── index.html                    # Vite HTML shell
 ├── package.json                  # Scripts and dependencies
+├── DEVLOG.md                     # Agent notes, verification checklist, and milestones
 ├── vite.config.js                # Vite + GitHub Pages base-path config
 └── .gitignore
 ```

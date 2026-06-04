@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import content from "../content/stages.json";
+import packageJson from "../package.json";
 
 const ENTRIES = content.stages;
+const APP_VERSION = packageJson.version;
 const ERA_CONFIG = {
   archean: {
     label: "Archean",
@@ -41,10 +43,15 @@ const ERA_CONFIG = {
 };
 
 const ERA_ORDER = ["archean", "proterozoic", "paleozoic", "mesozoic", "cenozoic"];
+const MOBILE_NAV_QUERY = "(max-width: 760px), (pointer: coarse)";
 
 function getEraStartIndex(index) {
   const era = ENTRIES[index].era;
   return ENTRIES.findIndex((entry) => entry.era === era);
+}
+
+function isMobileNavigationViewport() {
+  return window.matchMedia(MOBILE_NAV_QUERY).matches;
 }
 
 function getConfidenceColor(confidence) {
@@ -358,6 +365,7 @@ export default function App() {
   const [idx, setIdx] = useState(0);
   const [infoOpen, setInfoOpen] = useState(true);
   const gestureStartRef = useRef(null);
+  const mainShellRef = useRef(null);
 
   const go = useCallback((dir) => {
     setIdx((previous) => {
@@ -400,21 +408,62 @@ export default function App() {
     return () => window.removeEventListener("keydown", handler);
   }, [go, infoOpen]);
 
-  const handlePointerDown = useCallback((event) => {
-    if (infoOpen || !window.matchMedia("(max-width: 620px)").matches) return;
-    gestureStartRef.current = { x: event.clientX, y: event.clientY };
+  const startGesture = useCallback((x, y) => {
+    if (infoOpen || !isMobileNavigationViewport()) return;
+    gestureStartRef.current = { x, y };
   }, [infoOpen]);
 
-  const handlePointerUp = useCallback((event) => {
+  const endGesture = useCallback((x, y) => {
     if (infoOpen || !gestureStartRef.current) return;
 
-    const deltaX = event.clientX - gestureStartRef.current.x;
-    const deltaY = event.clientY - gestureStartRef.current.y;
+    const deltaX = x - gestureStartRef.current.x;
+    const deltaY = y - gestureStartRef.current.y;
     gestureStartRef.current = null;
 
     if (Math.abs(deltaX) < 56 || Math.abs(deltaX) < Math.abs(deltaY) * 1.4) return;
     go(deltaX < 0 ? 1 : -1);
   }, [go, infoOpen]);
+
+  const handleTouchStart = useCallback((event) => {
+    if (event.touches.length !== 1) return;
+    const touch = event.touches[0];
+    startGesture(touch.clientX, touch.clientY);
+  }, [startGesture]);
+
+  const handleTouchEnd = useCallback((event) => {
+    if (event.changedTouches.length !== 1) return;
+    const touch = event.changedTouches[0];
+    endGesture(touch.clientX, touch.clientY);
+  }, [endGesture]);
+
+  const handleTouchCancel = useCallback(() => {
+    gestureStartRef.current = null;
+  }, []);
+
+  useEffect(() => {
+    const shell = mainShellRef.current;
+    if (!shell) return undefined;
+
+    shell.addEventListener("touchstart", handleTouchStart, { passive: true });
+    shell.addEventListener("touchend", handleTouchEnd, { passive: true });
+    shell.addEventListener("touchcancel", handleTouchCancel, { passive: true });
+
+    return () => {
+      shell.removeEventListener("touchstart", handleTouchStart);
+      shell.removeEventListener("touchend", handleTouchEnd);
+      shell.removeEventListener("touchcancel", handleTouchCancel);
+    };
+  }, [handleTouchCancel, handleTouchEnd, handleTouchStart]);
+
+  const handlePointerDown = useCallback((event) => {
+    if (event.pointerType === "touch") return;
+    startGesture(event.clientX, event.clientY);
+  }, [startGesture]);
+
+  const handlePointerUp = useCallback((event) => {
+    if (event.pointerType === "touch") return;
+    endGesture(event.clientX, event.clientY);
+  }, [endGesture]);
 
   const entry = ENTRIES[idx];
   const era = ERA_CONFIG[entry.era];
@@ -427,7 +476,12 @@ export default function App() {
           <EntryList current={idx} onSelect={setIdx} />
         </div>
 
-        <div className="main-shell" onPointerDown={handlePointerDown} onPointerUp={handlePointerUp}>
+        <div
+          ref={mainShellRef}
+          className="main-shell"
+          onPointerDown={handlePointerDown}
+          onPointerUp={handlePointerUp}
+        >
           <PageContent key={entry.id} entry={entry} />
 
           {!infoOpen && (
@@ -455,6 +509,8 @@ export default function App() {
         <button type="button" onClick={() => go(1)} disabled={idx === ENTRIES.length - 1}>
           next →
         </button>
+
+        <span className="app-version">v{APP_VERSION}</span>
       </footer>
     </div>
   );
