@@ -364,6 +364,7 @@ function InfoModal({ onClose }) {
 export default function App() {
   const [idx, setIdx] = useState(0);
   const [infoOpen, setInfoOpen] = useState(true);
+  const [swipeHintVisible, setSwipeHintVisible] = useState(true);
   const gestureStartRef = useRef(null);
   const mainShellRef = useRef(null);
 
@@ -372,6 +373,7 @@ export default function App() {
       const next = previous + dir;
       if (next < 0) return 0;
       if (next >= ENTRIES.length) return ENTRIES.length - 1;
+      if (next !== previous) setSwipeHintVisible(false);
       return next;
     });
   }, []);
@@ -510,6 +512,7 @@ export default function App() {
           next →
         </button>
 
+        {swipeHintVisible && <span className="swipe-hint">swipe to navigate</span>}
         <span className="app-version">v{APP_VERSION}</span>
       </footer>
     </div>

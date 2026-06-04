@@ -610,6 +610,10 @@ h1 {
   font-variant-numeric: tabular-nums;
 }
 
+.swipe-hint {
+  display: none;
+}
+
 @media (max-width: 760px) {
   .sidebar-shell {
     width: 220px;
@@ -789,6 +793,16 @@ h1 {
 
   .bottom-nav button {
     display: none;
+  }
+
+  .swipe-hint {
+    position: absolute;
+    left: 12px;
+    display: block;
+    color: #52525b;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
 
   .app-version {

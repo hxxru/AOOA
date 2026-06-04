@@ -10,6 +10,7 @@ Released as the first stable testing version of the All of Our Ancestors React/V
 - The sidebar/timeline window is era-anchored: it starts at the oldest entry in the current era and shows every later era, while older eras are collapsed.
 - Desktop navigation supports sidebar clicks, footer prev/next buttons, arrow keys, Home, and End.
 - Mobile navigation hides footer prev/next buttons and uses horizontal gestures: swipe left for next, swipe right for previous.
+- The mobile footer shows a small first-use swipe hint that disappears after navigation.
 - The info/help content opens in a centered modal with a blurred backdrop.
 - The footer displays the app version from `package.json`.
 
@@ -21,7 +22,7 @@ Released as the first stable testing version of the All of Our Ancestors React/V
 - Mobile swipe handling uses native `touchstart`, `touchend`, and `touchcancel` listeners on `.main-shell`, with pointer events retained as a non-touch fallback for testing.
 - The mobile horizontal stage rail is separate from page swipes. Swipe page content to navigate stages; scroll the rail to browse visible stages.
 - Keep `content/stages.json` as structured data. Avoid hard-coding stage facts into JSX.
-- `.DS_Store` has appeared as a local dirty file in this workspace; do not include it in commits.
+- `.DS_Store` is ignored and should not be reintroduced to the repository.
 
 ### Verification checklist
 
@@ -42,7 +43,6 @@ Released as the first stable testing version of the All of Our Ancestors React/V
 
 ## Open questions
 
-- Should mobile include a visible swipe hint, or stay clean and rely on natural gestures?
 - Should versioning use git tags/releases in addition to `package.json`?
 - Should stage content support citations and confidence notes as first-class fields?
 - Should generated visual assets be committed, or fetched from a separate asset pipeline?
