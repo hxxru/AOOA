@@ -5,6 +5,7 @@ import packageJson from "../package.json";
 const ENTRIES = content.stages;
 const APP_VERSION = packageJson.version;
 const WIKIPEDIA_ICON_URL = "https://en.wikipedia.org/static/favicon/wikipedia.ico";
+const assetUrl = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
 const ERA_CONFIG = {
   archean: {
     label: "Archean",
@@ -317,7 +318,7 @@ function PageContent({ entry }) {
 
       {entry.illustration ? (
         <figure className="stage-illustration">
-          <img src={entry.illustration.src} alt={entry.illustration.alt} />
+          <img src={assetUrl(entry.illustration.src)} alt={entry.illustration.alt} />
         </figure>
       ) : (
         <div className="illustration-placeholder" role="img" aria-label={`Illustration placeholder for ${entry.name}`}>

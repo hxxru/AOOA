@@ -27,7 +27,7 @@ Released as the first stable testing version of the All of Our Ancestors React/V
 - Keep `content/stages.json` as structured data. Avoid hard-coding stage facts into JSX.
 - Keep stage intros to 2-3 concise sentences. They should orient, not replace citations or detailed explainers.
 - Prefer curated `links` entries over generated URLs; many stage names are lineage grades rather than exact article titles.
-- Keep illustration paths root-relative, for example `/illustrations/stage-10-early-chordate.jpg`, so Vite can serve them from `public/`.
+- Keep illustration paths root-relative in data, for example `/illustrations/stage-10-early-chordate.jpg`. `src/App.jsx` prefixes them with `import.meta.env.BASE_URL` so GitHub Pages deployments under `/AOOA/` load assets correctly.
 - `.DS_Store` is ignored and should not be reintroduced to the repository.
 
 ### Verification checklist
